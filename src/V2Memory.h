@@ -43,6 +43,10 @@ public:
     }
     static void read(uint32_t data[128]);
     static void write(uint32_t data[128]);
+
+    // Set the device fuses at the first bootup with a new set of configuration
+    // values. V2Device requires EEPROM emulation storage for its configuration.
+    static bool update();
   };
 };
 
@@ -56,6 +60,8 @@ public:
 
   // Calculate the hash of the given memory area.
   static void calculateHash(uint32_t offset, uint32_t len, char hash[41]);
+
+  static void reboot();
 
   class Secondary {
   public:
@@ -106,4 +112,4 @@ public:
   // Overwrite the entire flash area with 0xff.
   static void erase();
 };
-}; // namespace V2Memory
+};

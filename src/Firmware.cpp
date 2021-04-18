@@ -26,6 +26,10 @@ void V2Memory::Firmware::calculateHash(uint32_t offset, uint32_t len, char hash[
     sprintf((char *)hash + (i * 2), "%02x", digest[i]);
 }
 
+void V2Memory::Firmware::reboot() {
+  NVIC_SystemReset();
+}
+
 void V2Memory::Firmware::Secondary::writeBlock(uint32_t offset, const uint32_t *data) {
   const uint32_t start = getStart() + Firmware::getStart();
   if (memcmp((const uint8_t *)start + offset, data, Flash::getBlockSize()) == 0)
