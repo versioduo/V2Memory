@@ -1,3 +1,6 @@
+// © Kay Sievers <kay@vrfy.org>, 2020-2021
+// SPDX-License-Identifier: Apache-2.0
+
 #pragma once
 
 #include <Arduino.h>

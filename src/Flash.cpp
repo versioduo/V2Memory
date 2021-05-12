@@ -1,3 +1,6 @@
+// © Kay Sievers <kay@vrfy.org>, 2020-2021
+// SPDX-License-Identifier: Apache-2.0
+
 #include "V2Memory.h"
 
 uint8_t V2Memory::Flash::getBank() {
